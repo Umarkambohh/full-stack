@@ -1,6 +1,4 @@
 <template>
-
-  <h1>guest</h1>
+  <h1>login</h1>
 </template>
-
 <script setup></script>
