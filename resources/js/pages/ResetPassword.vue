@@ -5,11 +5,11 @@
         <div class="col-12 col-sm-10 col-md-8 col-lg-5">
           <div class="card shadow-sm border-0">
             <div class="card-body p-4 p-md-5">
-              <h1 class="h4 mb-4 text-center">Login</h1>
+              <h1 class="h4 mb-4 text-center">Reset Password</h1>
 
               <form>
                 <div class="mb-3">
-                  <label class="form-label" for="email">Email</label>
+                  <label class="form-label" for="email">Email address</label>
                   <input
                     id="email"
                     type="email"
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="mb-3">
-                  <label class="form-label" for="password">Password</label>
+                  <label class="form-label" for="password">New Password</label>
                   <input
                     id="password"
                     type="password"
@@ -28,33 +28,28 @@
                   />
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="form-check">
-                    <input
-                      id="remember"
-                      class="form-check-input"
-                      type="checkbox"
-                    />
-                    <label class="form-check-label" for="remember">Remember me</label>
-                  </div>
-                  <a href="#" class="small text-decoration-none">Forgot password?</a>
+                <div class="mb-3">
+                  <label class="form-label" for="confirmPassword">Confirm Password</label>
+                  <input
+                    id="confirmPassword"
+                    type="password"
+                    class="form-control"
+                    placeholder="••••••••"
+                  />
                 </div>
 
                 <button class="btn btn-primary w-100" type="submit">
-                  Login
+                  Reset Password
                 </button>
               </form>
 
               <p class="text-center mt-4 mb-0 small">
-                Don’t have an account?
-                <a href="#" class="text-decoration-none">Register</a>
+                <a href="#" class="text-decoration-none">Back to Login</a>
               </p>
             </div>
           </div>
 
-          <p class="text-center text-muted small mt-3 mb-0">
-            © 2025 Your App
-          </p>
+          <p class="text-center text-muted small mt-3 mb-0">© 2025 Your App</p>
         </div>
       </div>
     </div>
