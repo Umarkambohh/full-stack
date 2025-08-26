@@ -7,31 +7,27 @@
             <div class="card-body p-4 p-md-5">
               <h1 class="h4 mb-4 text-center">Create Account</h1>
 
-              <form>
+              <form @submit.prevent="submitForm"> 
                 <div class="row">
-                  <div class="col-12 col-md-6 mb-3">
+                  <div class="col-12 col-12 mb-3">
                     <label class="form-label" for="firstName">First name</label>
-                    <input id="firstName" type="text" class="form-control" placeholder="Umar" />
-                  </div>
-                  <div class="col-12 col-md-6 mb-3">
-                    <label class="form-label" for="lastName">Last name</label>
-                    <input id="lastName" type="text" class="form-control" placeholder="Saleem" />
+                    <input v-model="formData.name" type="text" class="form-control" placeholder="Umar" />
                   </div>
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label" for="email">Email</label>
-                  <input id="email" type="email" class="form-control" placeholder="you@example.com" />
+                  <input v-model="formData.email" type="email" class="form-control" placeholder="you@example.com" />
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label" for="password">Password</label>
-                  <input id="password" type="password" class="form-control" placeholder="••••••••" />
+                  <input v-model="formData.password" type="password" class="form-control" placeholder="••••••••" />
                 </div>
 
                 <div class="mb-3">
                   <label class="form-label" for="confirmPassword">Confirm password</label>
-                  <input id="confirmPassword" type="password" class="form-control" placeholder="••••••••" />
+                  <input v-model="formData.password_confirmation" type="password" class="form-control" placeholder="••••••••" />
                 </div>
 
                 <div class="form-check mb-3">
@@ -58,4 +54,28 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import axios from 'axios';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const formData = ref({
+  name: '',
+  email: '',
+  password: '',
+  password_confirmation: '',
+})
+
+const submitForm = () => {
+  axios.post('/api/signup', formData.value)
+    .then(res => {
+      console.log(res.data);
+      router.push('/login');
+    })
+    .catch(err => {
+      console.error(err);
+    });
+}
+</script>

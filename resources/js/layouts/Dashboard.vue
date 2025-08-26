@@ -1,9 +1,10 @@
 <template>
-  <div>
-    <header>Admin Header</header>
+    <AdminHeader />    
     <router-view />
-    <footer>Admin Footer</footer>
-  </div>
+    <AdminFooter />
 </template>
 
-<script setup></script>
+<script setup>
+import AdminHeader from "../components/admin/AdminHeader.vue";
+import AdminFooter from "../components/admin/AdminFooter.vue";
+</script>

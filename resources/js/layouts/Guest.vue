@@ -1,7 +1,10 @@
 <template>
-    <!-- <header>Guest Header</header> -->
+    <Header />
     <router-view />
-    <!-- <footer>Guest Footer</footer> -->
+    <Footer />
 </template>
 
-<script setup></script>
+<script setup>
+import  Header  from "../components/Header.vue";
+import  Footer  from "../components/Footer.vue";
+</script>
